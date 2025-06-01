@@ -251,13 +251,13 @@ main( int argc, char *argv[ ] )
 
 	for( int i = 0; i < DATASIZE; i++ )
 	{
-		sumx   += ?????;
-		sumx2  += ?????;
-		sumx3  += ?????;
-		sumx4  += ?????;
-		sumy   += ?????;
-		sumxy  += ?????;
-		sumx2y += ?????;
+		sumx   += hSumx[i];
+		sumx2  += hSumx2[i];
+		sumx3  += hSumx3[i];
+		sumx4  += hSumx4[i];
+		sumy   += hSumy[i];
+		sumxy  += hSumxy[i];
+		sumx2y += hSumx2y[i];
 	}
 
 	float Q, L, C;
