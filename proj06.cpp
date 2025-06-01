@@ -231,13 +231,13 @@ main( int argc, char *argv[ ] )
 
 	// 12. read the results buffer back from the device to the host:
 
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
-	status = clEnqueueReadBuffer( CmdQueue, ?????, CL_FALSE, 0, xySize, ?????, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumx4, CL_FALSE, 0, xySize, hSumx4, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumx3, CL_FALSE, 0, xySize, hSumx3, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumx2, CL_FALSE, 0, xySize, hSumx2, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumx, CL_FALSE, 0, xySize, hSumx, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumx2y, CL_FALSE, 0, xySize, hSumx2y, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumxy, CL_FALSE, 0, xySize, hSumxy, 0, NULL, NULL );
+	status = clEnqueueReadBuffer( CmdQueue, dSumy, CL_FALSE, 0, xySize, hSumy, 0, NULL, NULL );
 
 	Wait( CmdQueue );
 
