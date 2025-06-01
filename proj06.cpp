@@ -147,8 +147,8 @@ main( int argc, char *argv[ ] )
 
 	// 6. enqueue the 2 commands to write the data from the host buffers to the device buffers:
 
-	status = clEnqueueWriteBuffer( CmdQueue, dx, CL_FALSE, 0, xySize, hx, 0, NULL, NULL );
-	status = clEnqueueWriteBuffer( CmdQueue, dy, CL_FALSE, 0, xySize, hy, 0, NULL, NULL );
+	status = clEnqueueWriteBuffer( CmdQueue, dX, CL_FALSE, 0, xySize, hX, 0, NULL, NULL );
+	status = clEnqueueWriteBuffer( CmdQueue, dY, CL_FALSE, 0, xySize, hY, 0, NULL, NULL );
 	if( status != CL_SUCCESS )
 		fprintf( stderr, "clEnqueueWriteBuffer failed (2)\n" );
 
@@ -201,16 +201,16 @@ main( int argc, char *argv[ ] )
 
 	// 10. setup the arguments to the kernel object:
 
-	status = clSetKernelArg( Kernel, 0, sizeof(cl_mem), ????? );
-	status = clSetKernelArg( Kernel, 1, sizeof(cl_mem), ????? );
+	status = clSetKernelArg( Kernel, 0, sizeof(cl_mem), &dX );
+	status = clSetKernelArg( Kernel, 1, sizeof(cl_mem), &dY );
 
-	status = clSetKernelArg( Kernel, 2, sizeof(cl_mem), ????? );
-	status = clSetKernelArg( Kernel, 3, sizeof(cl_mem), ????? );
-	status = clSetKernelArg( Kernel, 4, sizeof(cl_mem), ????? );
-	status = clSetKernelArg( Kernel, 5, sizeof(cl_mem), ?????  );
-	status = clSetKernelArg( Kernel, 6, sizeof(cl_mem), ????? );
-	status = clSetKernelArg( Kernel, 7, sizeof(cl_mem), ????? );
-	status = clSetKernelArg( Kernel, 8, sizeof(cl_mem), ????? );
+	status = clSetKernelArg( Kernel, 2, sizeof(cl_mem), &dSumx4 );
+	status = clSetKernelArg( Kernel, 3, sizeof(cl_mem), &dSumx3 );
+	status = clSetKernelArg( Kernel, 4, sizeof(cl_mem), &dSumx2 );
+	status = clSetKernelArg( Kernel, 5, sizeof(cl_mem), &dSumx  );
+	status = clSetKernelArg( Kernel, 6, sizeof(cl_mem), &dSumx2y );
+	status = clSetKernelArg( Kernel, 7, sizeof(cl_mem), &dSumxy );
+	status = clSetKernelArg( Kernel, 8, sizeof(cl_mem), &dSumy );
 
 	// 11. enqueue the kernel object for execution:
 
