@@ -131,15 +131,15 @@ main( int argc, char *argv[ ] )
 
 	size_t xySize = DATASIZE  * sizeof(float);
 
-	cl_mem dX      = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dY      = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumx4  = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumx3  = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumx2  = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumx   = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumx2y = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumxy  = clCreateBuffer( Context, ?????, ?????, NULL, &status );
-	cl_mem dSumy   = clCreateBuffer( Context, ?????, ?????, NULL, &status );
+	cl_mem dX      = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dY      = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumx4  = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumx3  = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumx2  = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumx   = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumx2y = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumxy  = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
+	cl_mem dSumy   = clCreateBuffer( Context, CL_MEM_READ_WRITE, xySize, NULL, &status );
 
 	if( status != CL_SUCCESS )
 		fprintf( stderr, "clCreateBuffer failed\n" );
